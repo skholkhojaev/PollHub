@@ -1,0 +1,31 @@
+h2.mb-4 Comments for Poll: #{@poll.title}
+
+- if logged_in?
+  .card.shadow-sm.mb-4
+    .card-body
+      form action="/polls/#{@poll.id}/comments" method="post"
+        .mb-3
+          label.form-label for="content" Add a comment
+          textarea.form-control#content name="content" rows="3" required=true
+        
+        .d-grid
+          button.btn.btn-primary type="submit" Submit Comment
+
+- if @comments.empty?
+  .alert.alert-info No comments yet. Be the first to comment!
+- else
+  - @comments.each do |comment|
+    .card.shadow-sm.mb-3
+      .card-header.d-flex.justify-content-between.align-items-center
+        div
+          strong = comment.user.username
+          small.text-muted.ms-2 = comment.created_at.strftime("%d %b %Y, %H:%M")
+        - if logged_in? && (current_user.id == comment.user_id || admin?)
+          form action="/comments/#{comment.id}" method="post"
+            input type="hidden" name="_method" value="delete"
+            button.btn.btn-sm.btn-danger type="submit" Delete
+      .card-body
+        p.card-text = comment.content
+
+.mt-4
+  a.btn.btn-primary href="/polls/#{@poll.id}" Back to Poll 

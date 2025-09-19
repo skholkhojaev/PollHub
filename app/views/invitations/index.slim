@@ -1,0 +1,76 @@
+h2.mb-4 Poll Invitations
+
+nav.mb-4 aria-label="breadcrumb"
+  ol.breadcrumb
+    li.breadcrumb-item
+      a href="/" Home
+    li.breadcrumb-item.active aria-current="page" Invitations
+
+- if @error
+  .alert.alert-danger role="alert"
+    = @error
+
+- if @pending_invitations.empty?
+  .alert.alert-info
+    .d-flex.align-items-center
+      i.bi.bi-envelope.me-2
+      span You have no pending poll invitations.
+  
+  .text-center.mt-4
+    a.btn.btn-primary href="/polls" Browse Public Polls
+
+- else
+  .alert.alert-info
+    .d-flex.align-items-center
+      i.bi.bi-bell.me-2
+      span You have #{@pending_invitations.count} pending invitation#{'s' if @pending_invitations.count != 1}.
+
+  - @pending_invitations.each do |invitation|
+    .card.shadow-sm.mb-4
+      .card-header.d-flex.justify-content-between.align-items-center
+        div
+          h5.mb-0 = invitation.poll.title
+          small.text-muted Private Poll
+        .badge.bg-warning Pending
+      
+      .card-body
+        p.card-text = invitation.poll.description
+        
+        .row.mb-3
+          .col-md-6
+            strong Organizer:
+            = " #{invitation.poll.organizer.username}"
+          .col-md-6
+            strong Invited by:
+            = " #{invitation.invited_by.username}"
+        
+        .row.mb-3
+          .col-md-6
+            strong Start Date:
+            = " #{invitation.poll.start_date.strftime('%d %b %Y')}"
+          .col-md-6
+            strong End Date:
+            = " #{invitation.poll.end_date.strftime('%d %b %Y')}"
+        
+        .row.mb-3
+          .col-md-6
+            strong Poll Status:
+            span.badge class="bg-#{invitation.poll.status == 'active' ? 'success' : (invitation.poll.status == 'closed' ? 'danger' : 'warning')}"
+              = invitation.poll.status.capitalize
+          .col-md-6
+            strong Invited:
+            = " #{invitation.created_at.strftime('%d %b %Y, %H:%M')}"
+        
+        .d-flex.gap-2.mt-3
+          form.d-inline action="/invitations/#{invitation.id}/accept" method="post"
+            button.btn.btn-success type="submit" 
+              i.bi.bi-check-circle.me-1
+              | Accept
+          
+          form.d-inline action="/invitations/#{invitation.id}/decline" method="post"
+            button.btn.btn-danger type="submit" onclick="return confirm('Are you sure you want to decline this invitation?')"
+              i.bi.bi-x-circle.me-1
+              | Decline
+
+.mt-4
+  a.btn.btn-secondary href="/" Back to Home 

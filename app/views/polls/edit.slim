@@ -1,0 +1,43 @@
+h2.mb-4 Edit Poll: #{@poll.title}
+
+.card.shadow-sm
+  .card-body
+    form action="/polls/#{@poll.id}" method="post"
+      input type="hidden" name="_method" value="patch"
+      
+      .mb-3
+        label.form-label for="title" Poll Title
+        input.form-control type="text" id="title" name="title" value="#{@poll.title}" required=true
+      
+      .mb-3
+        label.form-label for="description" Description
+        textarea.form-control id="description" name="description" rows="3" required=true = @poll.description
+      
+      .row
+        .col-md-6.mb-3
+          label.form-label for="start_date" Start Date
+          input.form-control type="date" id="start_date" name="start_date" value="#{@poll.start_date}" required=true
+        
+        .col-md-6.mb-3
+          label.form-label for="end_date" End Date
+          input.form-control type="date" id="end_date" name="end_date" value="#{@poll.end_date}" required=true
+      
+      .mb-3
+        label.form-label for="status" Status
+        select.form-select id="status" name="status" required=true
+          option value="draft" selected=(@poll.status == 'draft') Draft
+          option value="active" selected=(@poll.status == 'active') Active
+          option value="closed" selected=(@poll.status == 'closed') Closed
+      
+      - if organizer? || admin?
+        .mb-3
+          .form-check
+            input.form-check-input type="checkbox" id="private" name="private" value="1" checked=@poll.private
+            label.form-check-label for="private" 
+              | Make this poll private (only visible to admins and organizers)
+              - if !admin?
+                small.text-muted.d-block Note: You will still see your own polls even if they are private.
+      
+      .d-grid.gap-2
+        button.btn.btn-primary type="submit" Update Poll
+        a.btn.btn-secondary href="/polls/#{@poll.id}" Cancel 

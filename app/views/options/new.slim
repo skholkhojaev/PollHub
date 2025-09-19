@@ -1,0 +1,17 @@
+h2.mb-4 Add Option for Question: "#{@question.text}"
+
+.card.shadow-sm
+  .card-body
+    form action="/polls/#{@poll.id}/questions/#{@question.id}/options" method="post"
+      .mb-3
+        label.form-label for="text" Option Text
+        input.form-control type="text" id="text" name="text" required=true
+      
+      .mb-3
+        .form-check
+          input.form-check-input type="checkbox" id="add_another" name="add_another" value="1"
+          label.form-check-label for="add_another" Add another option after this one
+      
+      .d-grid.gap-2
+        button.btn.btn-primary type="submit" Save Option
+        a.btn.btn-secondary href="/polls/#{@poll.id}" Done Adding Options 

@@ -1,0 +1,33 @@
+h2.mb-4 Create New Poll
+
+.card.shadow-sm
+  .card-body
+    form action="/polls" method="post"
+      .mb-3
+        label.form-label for="title" Poll Title
+        input.form-control type="text" id="title" name="title" required=true
+      
+      .mb-3
+        label.form-label for="description" Description
+        textarea.form-control id="description" name="description" rows="3" required=true
+      
+      .row
+        .col-md-6.mb-3
+          label.form-label for="start_date" Start Date
+          input.form-control type="date" id="start_date" name="start_date" required=true
+        
+        .col-md-6.mb-3
+          label.form-label for="end_date" End Date
+          input.form-control type="date" id="end_date" name="end_date" required=true
+      
+      - if organizer? || admin?
+        .mb-3
+          .form-check
+            input.form-check-input type="checkbox" id="private" name="private" value="1"
+            label.form-check-label for="private" 
+              | Make this poll private (only visible to admins and organizers)
+              - if !admin?
+                small.text-muted.d-block Note: You will still see your own polls even if they are private.
+      
+      .d-grid
+        button.btn.btn-primary type="submit" Continue to Add Questions 

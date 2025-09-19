@@ -1,0 +1,82 @@
+h2.mb-4
+  = @poll.title
+  span.badge.bg-secondary.ms-2 Private Poll
+  span.badge.bg-info.ms-2 Manage Invitations
+
+p.lead = @poll.description
+
+nav.mb-4 aria-label="breadcrumb"
+  ol.breadcrumb
+    li.breadcrumb-item
+      a href="/polls" Polls
+    li.breadcrumb-item
+      a href="/polls/#{@poll.id}" = @poll.title
+    li.breadcrumb-item.active aria-current="page" Invitations
+
+- if @error
+  .alert.alert-danger role="alert"
+    = @error
+
+/ Invite new voter section
+.card.shadow-sm.mb-4
+  .card-header
+    h4.mb-0 Invite Voter
+  .card-body
+    - if @available_voters.empty?
+      .alert.alert-info All available voters have already been invited to this poll.
+    - else
+      form action="/polls/#{@poll.id}/invitations" method="post"
+        .mb-3
+          label.form-label for="voter_id" Select Voter
+          select.form-select#voter_id name="voter_id" required=true
+            option value="" Select a voter...
+            - @available_voters.each do |voter|
+              option value="#{voter.id}" = "#{voter.username} (#{voter.email})"
+        
+        .d-grid
+          button.btn.btn-primary type="submit" Send Invitation
+
+/ Current invitations section
+.card.shadow-sm
+  .card-header
+    h4.mb-0 
+      | Current Invitations 
+      span.badge.bg-secondary.ms-2 = @invitations.count
+  .card-body
+    - if @invitations.empty?
+      .alert.alert-info No invitations sent yet.
+    - else
+      .table-responsive
+        table.table.table-hover
+          thead
+            tr
+              th Voter
+              th Email
+              th Status
+              th Invited By
+              th Invited Date
+              th Actions
+          tbody
+            - @invitations.each do |invitation|
+              tr
+                td
+                  strong = invitation.voter.username
+                td = invitation.voter.email
+                td
+                  - case invitation.status
+                  - when 'pending'
+                    span.badge.bg-warning Pending
+                  - when 'accepted'
+                    span.badge.bg-success Accepted
+                  - when 'declined'
+                    span.badge.bg-danger Declined
+                td = invitation.invited_by.username
+                td = invitation.created_at.strftime("%d %b %Y, %H:%M")
+                td
+                  - if invitation.pending? || invitation.declined?
+                    form.d-inline action="/polls/#{@poll.id}/invitations/#{invitation.id}" method="post"
+                      input type="hidden" name="_method" value="delete"
+                      button.btn.btn-sm.btn-danger type="submit" onclick="return confirm('Remove this invitation?')" Remove
+
+.mt-4
+  a.btn.btn-secondary href="/polls/#{@poll.id}" Back to Poll 

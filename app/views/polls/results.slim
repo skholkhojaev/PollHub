@@ -1,0 +1,97 @@
+h2.mb-4
+  | Poll Results: #{@poll.title}
+  - if @poll.private
+    span.badge.bg-secondary.ms-2 Private
+p.lead = @poll.description
+
+.mb-4
+  span.badge.bg-info Start: #{@poll.start_date.strftime("%d %b %Y")}
+  span.badge.bg-info.ms-2 End: #{@poll.end_date.strftime("%d %b %Y")}
+  span.badge class="bg-#{@poll.status == 'active' ? 'success' : (@poll.status == 'closed' ? 'danger' : 'warning')}" = @poll.status.capitalize
+
+/ Poll Management Buttons for Organizers and Admins
+- if @poll.organizer_id == current_user&.id || admin?
+  .mb-4.p-3.bg-light.rounded
+    h5.mb-3 Poll Management
+    .d-flex.flex-wrap.gap-2
+      - if @poll.status == 'draft'
+        form.d-inline action="/polls/#{@poll.id}/activate" method="post"
+          button.btn.btn-success type="submit" Activate Poll
+      - elsif @poll.status == 'active'
+        form.d-inline action="/polls/#{@poll.id}/close" method="post"
+          button.btn.btn-danger type="submit" onclick="return confirm('Are you sure you want to close this poll? This action cannot be undone.')" Close Poll
+      
+      a.btn.btn-warning href="/polls/#{@poll.id}/edit" Edit Poll
+      a.btn.btn-info href="/polls/#{@poll.id}" View Poll
+      
+      - if @poll.private?
+        a.btn.btn-info href="/polls/#{@poll.id}/invitations" 
+          i.bi.bi-people.me-1
+          | Manage Invitations
+      
+      / Delete Poll Button
+      form.d-inline action="/polls/#{@poll.id}" method="post"
+        input type="hidden" name="_method" value="delete"
+        button.btn.btn-danger type="submit" onclick="return confirm('Are you sure you want to delete this poll? This action cannot be undone and will remove all questions, options, votes, and comments.')"
+          i.bi.bi-trash.me-1
+          | Delete Poll
+
+.card.shadow-sm.mb-4
+  .card-body
+    - @questions.each do |question|
+      .mb-5
+        h4 = question.text
+        p.text-muted Question Type: #{question.question_type.gsub('_', ' ').capitalize}
+        
+        - total_votes = question.votes.count
+        p.text-muted Total votes: #{total_votes}
+        
+        - question.options.each do |option|
+          - vote_count = option.votes.count
+          - percentage = total_votes > 0 ? ((vote_count.to_f / total_votes) * 100).round(2) : 0
+          
+          .mb-3
+            .d-flex.justify-content-between
+              span = option.text
+              span.text-muted #{vote_count} votes (#{percentage}%)
+            .progress
+              .progress-bar role="progressbar" style="width: #{percentage}%" aria-valuenow="#{percentage}" aria-valuemin="0" aria-valuemax="100"
+      
+      hr
+
+.mt-4
+  a.btn.btn-primary href="/polls" Back to Polls
+
+/ Comments section
+#comments.mt-5
+  h3.mb-3 Comments
+
+  - comments = Comment.where(poll_id: @poll.id).order(created_at: :desc).includes(:user)
+  
+  - if logged_in?
+    .card.shadow-sm.mb-4
+      .card-body
+        form action="/polls/#{@poll.id}/comments" method="post"
+          .mb-3
+            label.form-label for="content" Add a comment
+            textarea.form-control#content name="content" rows="3" required=true
+          
+          .d-grid
+            button.btn.btn-primary type="submit" Submit Comment
+  
+  - if comments.empty?
+    .alert.alert-info No comments yet. Be the first to comment!
+  - else
+    - comments.each do |comment|
+      .card.shadow-sm.mb-3
+        .card-header.d-flex.justify-content-between.align-items-center
+          div
+            strong = comment.user.username
+            small.text-muted.ms-2 = comment.created_at.strftime("%d %b %Y, %H:%M")
+          / Updated comment deletion - allow organizers and admins to delete any comment
+          - if logged_in? && (current_user.id == comment.user_id || admin? || (@poll.organizer_id == current_user.id))
+            form action="/comments/#{comment.id}" method="post"
+              input type="hidden" name="_method" value="delete"
+              button.btn.btn-sm.btn-danger type="submit" onclick="return confirm('Are you sure you want to delete this comment?')" Delete
+        .card-body
+          p.card-text = comment.content 

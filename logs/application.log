@@ -1,0 +1,97 @@
+[2025-06-19 13:22:59] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-06-19 13:23:39] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-06-19 13:24:23] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-06-19 13:24:33] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-06-19 13:24:44] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-06-19 13:25:10] INFO  CommunityPollHub::App: User Action: visit_homepage | Anonymous | IP: ::1 | Details: {}
+[2025-06-19 13:25:11] INFO  CommunityPollHub::App: User Action: page_not_found | Anonymous | IP: ::1 | Details: {:path=>"/favicon.ico", :method=>"GET"}
+[2025-06-19 13:25:16] INFO  CommunityPollHub::Auth: User Action: visit_login_page | Anonymous | IP: ::1 | Details: {}
+[2025-06-19 13:25:39] INFO  CommunityPollHub::Auth: User Action: login_successful | User: admin (1) | IP: ::1 | Details: {:username=>"admin"}
+[2025-06-19 13:25:39] INFO  CommunityPollHub::App: User Action: visit_homepage | User: admin (1) | IP: ::1 | Details: {}
+[2025-06-19 13:25:58] INFO  CommunityPollHub::Admin: User Action: admin_dashboard_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-06-19 13:26:14] INFO  CommunityPollHub::Polls: User Action: poll_creation_form_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-06-19 13:26:26] INFO  CommunityPollHub::Polls: User Action: poll_created | User: admin (1) | IP: ::1 | Details: {:poll_id=>2, :title=>"sfnsf", :private=>false, :organizer=>"admin"}
+[2025-06-19 13:26:49] INFO  CommunityPollHub::Polls: User Action: poll_viewed | User: admin (1) | IP: ::1 | Details: {:poll_id=>"2", :poll_title=>"sfnsf"}
+[2025-06-19 13:26:54] INFO  CommunityPollHub::Polls: User Action: poll_activated | User: admin (1) | IP: ::1 | Details: {:poll_id=>"2", :poll_title=>"sfnsf", :activated_by=>"admin"}
+[2025-06-19 13:26:54] INFO  CommunityPollHub::Polls: User Action: poll_viewed | User: admin (1) | IP: ::1 | Details: {:poll_id=>"2", :poll_title=>"sfnsf"}
+[2025-06-19 13:27:01] INFO  CommunityPollHub::Polls: User Action: votes_cast_successfully | User: admin (1) | IP: ::1 | Details: {:poll_id=>"2", :poll_title=>"sfnsf", :total_votes_cast=>1, :vote_details=>[{:question_id=>"3", :option_id=>"11", :type=>"multiple_choice"}], :voter=>"admin"}
+[2025-06-19 13:27:01] INFO  CommunityPollHub::Polls: User Action: poll_results_viewed | User: admin (1) | IP: ::1 | Details: {:poll_id=>"2", :poll_title=>"sfnsf"}
+[2025-09-19 09:37:25] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-19 09:37:35] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-19 09:37:43] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-19 09:37:54] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-19 09:38:04] INFO  CommunityPollHub::App: User Action: visit_homepage | Anonymous | IP: ::1 | Details: {}
+[2025-09-19 09:38:06] INFO  CommunityPollHub::Auth: User Action: visit_login_page | Anonymous | IP: ::1 | Details: {}
+[2025-09-19 09:38:09] WARN  CommunityPollHub::Security: Security Event: login_failed | Anonymous | IP: ::1 | Details: {:username=>"admin", :ip=>"::1"}
+[2025-09-19 09:38:14] WARN  CommunityPollHub::Security: Security Event: login_failed | Anonymous | IP: ::1 | Details: {:username=>"admin", :ip=>"::1"}
+[2025-09-19 09:38:42] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-19 09:38:50] WARN  CommunityPollHub::Security: Security Event: login_failed | Anonymous | IP: ::1 | Details: {:username=>"admin", :ip=>"::1"}
+[2025-09-19 09:38:57] INFO  CommunityPollHub::App: User Action: visit_homepage | Anonymous | IP: ::1 | Details: {}
+[2025-09-19 09:38:58] INFO  CommunityPollHub::Auth: User Action: visit_register_page | Anonymous | IP: ::1 | Details: {}
+[2025-09-19 09:39:16] INFO  CommunityPollHub::Auth: User Action: registration_failed | Anonymous | IP: ::1 | Details: {:username=>"user67", :email=>"user67@gmail.com", :errors=>["Password must contain at least one uppercase letter", "Password must contain at least one special character"]}
+[2025-09-19 09:39:24] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-19 09:39:43] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-19 09:39:52] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-19 09:40:20] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-19 09:40:29] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-19 09:40:38] INFO  CommunityPollHub::Auth: User Action: registration_failed | Anonymous | IP: ::1 | Details: {:username=>"user67", :email=>"user67@gmail.com", :errors=>["Password must contain at least one uppercase letter", "Password must contain at least one special character"]}
+[2025-09-19 09:40:39] INFO  CommunityPollHub::Auth: User Action: visit_register_page | Anonymous | IP: ::1 | Details: {}
+[2025-09-19 09:40:41] INFO  CommunityPollHub::App: User Action: visit_homepage | Anonymous | IP: ::1 | Details: {}
+[2025-09-19 09:40:42] INFO  CommunityPollHub::Auth: User Action: visit_login_page | Anonymous | IP: ::1 | Details: {}
+[2025-09-19 09:40:54] INFO  CommunityPollHub::Auth: User Action: login_successful | User: admin (1) | IP: ::1 | Details: {:username=>"admin"}
+[2025-09-19 09:40:54] INFO  CommunityPollHub::App: User Action: visit_homepage | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-19 09:40:55] INFO  CommunityPollHub::Polls: User Action: polls_list_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-19 09:40:57] INFO  CommunityPollHub::App: User Action: visit_homepage | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-19 09:40:58] INFO  CommunityPollHub::Polls: User Action: poll_creation_form_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-19 09:40:59] INFO  CommunityPollHub::App: User Action: visit_homepage | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-19 09:41:01] INFO  CommunityPollHub::Polls: User Action: polls_list_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-19 09:41:02] INFO  CommunityPollHub::Polls: User Action: poll_creation_form_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-19 09:41:02] INFO  CommunityPollHub::App: User Action: visit_homepage | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-19 09:41:03] INFO  CommunityPollHub::Polls: User Action: poll_creation_form_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-19 09:41:06] INFO  CommunityPollHub::Admin: User Action: admin_dashboard_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-19 09:41:14] INFO  CommunityPollHub::App: User Action: visit_homepage | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-19 09:41:17] INFO  CommunityPollHub::Polls: User Action: poll_creation_form_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-19 09:41:59] INFO  CommunityPollHub::Polls: User Action: poll_creation_failed | User: admin (1) | IP: ::1 | Details: {:title=>"First Pull bihhAhhhh", :errors=>["Start date must be in the future"]}
+[2025-09-19 09:49:46] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-19 09:56:39] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-19 09:56:51] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-19 09:57:30] WARN  CommunityPollHub::Security: Security Event: organizer_access_denied | Anonymous | IP: ::1 | Details: {:user=>nil, :path=>"/polls", :method=>"POST"}
+[2025-09-19 09:57:30] INFO  CommunityPollHub::App: User Action: visit_homepage | Anonymous | IP: ::1 | Details: {}
+[2025-09-19 09:57:32] INFO  CommunityPollHub::Auth: User Action: visit_login_page | Anonymous | IP: ::1 | Details: {}
+[2025-09-19 09:57:39] INFO  CommunityPollHub::Auth: User Action: login_successful | User: admin (1) | IP: ::1 | Details: {:username=>"admin"}
+[2025-09-19 09:57:39] INFO  CommunityPollHub::App: User Action: visit_homepage | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-19 09:57:41] INFO  CommunityPollHub::Polls: User Action: poll_creation_form_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-19 09:57:50] INFO  CommunityPollHub::Polls: User Action: poll_created | User: admin (1) | IP: ::1 | Details: {:poll_id=>2, :title=>"Polls", :private=>false, :organizer=>"admin"}
+[2025-09-19 09:58:06] INFO  CommunityPollHub::Polls: User Action: poll_viewed | User: admin (1) | IP: ::1 | Details: {:poll_id=>"2", :poll_title=>"Polls"}
+[2025-09-19 09:58:13] INFO  CommunityPollHub::Polls: User Action: poll_activated | User: admin (1) | IP: ::1 | Details: {:poll_id=>"2", :poll_title=>"Polls", :activated_by=>"admin"}
+[2025-09-19 09:58:13] INFO  CommunityPollHub::Polls: User Action: poll_viewed | User: admin (1) | IP: ::1 | Details: {:poll_id=>"2", :poll_title=>"Polls"}
+[2025-09-19 09:58:15] INFO  CommunityPollHub::App: User Action: visit_homepage | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-19 09:58:16] INFO  CommunityPollHub::Polls: User Action: polls_list_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-19 09:59:09] INFO  CommunityPollHub::Polls: User Action: poll_viewed | User: admin (1) | IP: ::1 | Details: {:poll_id=>"1", :poll_title=>"Favorite Programming Language"}
+[2025-09-19 09:59:13] INFO  CommunityPollHub::Polls: User Action: poll_viewed | User: admin (1) | IP: ::1 | Details: {:poll_id=>"2", :poll_title=>"Polls"}
+[2025-09-19 10:54:16] INFO  CommunityPollHub::App: User Action: visit_homepage | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-19 10:54:26] INFO  CommunityPollHub::Polls: User Action: polls_list_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-19 11:02:14] INFO  CommunityPollHub::Polls: User Action: poll_viewed | User: admin (1) | IP: ::1 | Details: {:poll_id=>"1", :poll_title=>"Favorite Programming Language"}
+[2025-09-19 11:02:22] INFO  CommunityPollHub::Polls: User Action: votes_cast_successfully | User: admin (1) | IP: ::1 | Details: {:poll_id=>"1", :poll_title=>"Favorite Programming Language", :total_votes_cast=>2, :vote_details=>[{:question_id=>"1", :option_id=>2, :type=>"single_choice"}, {:question_id=>"2", :option_id=>"7", :type=>"multiple_choice"}], :voter=>"admin"}
+[2025-09-19 11:02:22] INFO  CommunityPollHub::Polls: User Action: poll_results_viewed | User: admin (1) | IP: ::1 | Details: {:poll_id=>"1", :poll_title=>"Favorite Programming Language"}
+[2025-09-19 11:04:42] INFO  CommunityPollHub::App: User Action: visit_homepage | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-19 11:04:43] INFO  CommunityPollHub::Polls: User Action: poll_creation_form_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-19 11:10:00] INFO  CommunityPollHub::Polls: User Action: poll_created | User: admin (1) | IP: ::1 | Details: {:poll_id=>3, :title=>"asdfasfd", :private=>false, :organizer=>"admin"}
+[2025-09-19 13:27:06] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-19 13:27:10] INFO  CommunityPollHub::App: User Action: visit_homepage | Anonymous | IP: ::1 | Details: {}
+[2025-09-19 13:29:19] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-19 13:29:22] INFO  CommunityPollHub::App: User Action: visit_homepage | Anonymous | IP: ::1 | Details: {}
+[2025-09-19 13:29:23] INFO  CommunityPollHub::Auth: User Action: visit_login_page | Anonymous | IP: ::1 | Details: {}
+[2025-09-19 13:29:28] INFO  CommunityPollHub::Auth: User Action: login_successful | User: admin (1) | IP: ::1 | Details: {:username=>"admin"}
+[2025-09-19 13:29:28] INFO  CommunityPollHub::App: User Action: visit_homepage | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-19 13:29:29] INFO  CommunityPollHub::Polls: User Action: polls_list_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-19 13:29:45] INFO  CommunityPollHub::Polls: User Action: polls_list_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-19 13:29:46] INFO  CommunityPollHub::Polls: User Action: poll_creation_form_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-19 13:29:47] INFO  CommunityPollHub::Admin: User Action: admin_dashboard_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-19 13:29:47] INFO  CommunityPollHub::App: User Action: visit_homepage | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-19 13:29:49] INFO  CommunityPollHub::Polls: User Action: polls_list_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-19 13:29:50] INFO  CommunityPollHub::Polls: User Action: poll_creation_form_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-19 13:29:50] INFO  CommunityPollHub::Admin: User Action: admin_dashboard_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-19 13:29:51] INFO  CommunityPollHub::App: User Action: visit_homepage | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-19 14:23:19] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-19 14:23:30] INFO  CommunityPollHub::App: User Action: visit_homepage | Anonymous | IP: ::1 | Details: {}

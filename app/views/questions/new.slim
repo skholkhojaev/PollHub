@@ -1,0 +1,20 @@
+h2.mb-4 Add Question to Poll: #{@poll.title}
+
+.card.shadow-sm
+  .card-body
+    form action="/polls/#{@poll.id}/questions" method="post"
+      .mb-3
+        label.form-label for="text" Question Text
+        input.form-control type="text" id="text" name="text" required=true
+      
+      .mb-3
+        label.form-label Question Type
+        .form-check
+          input.form-check-input type="radio" id="single_choice" name="question_type" value="single_choice" checked=true
+          label.form-check-label for="single_choice" Single Choice (Radio buttons)
+        .form-check
+          input.form-check-input type="radio" id="multiple_choice" name="question_type" value="multiple_choice"
+          label.form-check-label for="multiple_choice" Multiple Choice (Checkboxes)
+      
+      .d-grid
+        button.btn.btn-primary type="submit" Continue to Add Options 

@@ -1,0 +1,31 @@
+.jumbotron.p-5.mb-4.bg-light.rounded-3
+  h1.display-4 Welcome to Community Poll Hub
+  p.lead A modern platform for polls, surveys, discussions and feedback.
+  hr.my-4
+  p Create polls, cast votes, leave comments, and engage with others through our easy-to-use platform.
+  - if logged_in?
+    a.btn.btn-primary.btn-lg href="/polls" Browse Polls
+    - if organizer? || admin?
+      a.btn.btn-success.btn-lg.ms-2 href="/polls/new" Create New Poll
+  - else
+    a.btn.btn-primary.btn-lg href="/login" Login
+    a.btn.btn-success.btn-lg.ms-2 href="/register" Register
+
+.row.mt-5
+  .col-md-4
+    .card.shadow-sm
+      .card-body
+        h5.card-title Create Polls
+        p.card-text Organizers can create custom polls with single or multiple choice questions.
+  
+  .col-md-4
+    .card.shadow-sm
+      .card-body
+        h5.card-title Engage & Discuss
+        p.card-text Comment on polls, share your thoughts, and participate in discussions.
+  
+  .col-md-4
+    .card.shadow-sm
+      .card-body
+        h5.card-title View Results
+        p.card-text See real-time results and statistics for all polls you've participated in. 

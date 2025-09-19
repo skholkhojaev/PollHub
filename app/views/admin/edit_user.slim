@@ -1,0 +1,30 @@
+h2.mb-4 Edit User: #{@user.username}
+
+.card.shadow-sm
+  .card-body
+    form action="/admin/users/#{@user.id}" method="post"
+      input type="hidden" name="_method" value="patch"
+      
+      .mb-3
+        label.form-label for="username" Username
+        input.form-control type="text" id="username" name="username" value="#{@user.username}" required=true
+      
+      .mb-3
+        label.form-label for="email" Email
+        input.form-control type="email" id="email" name="email" value="#{@user.email}" required=true
+      
+      .mb-3
+        label.form-label for="role" Role
+        select.form-select id="role" name="role"
+          option value="admin" selected=(@user.role == 'admin') Admin
+          option value="organizer" selected=(@user.role == 'organizer') Organizer
+          option value="voter" selected=(@user.role == 'voter') Voter
+      
+      .mb-3
+        label.form-label for="password" Password (leave blank to keep current)
+        input.form-control type="password" id="password" name="password"
+        small.form-text.text-muted Only fill this if you want to change the password
+      
+      .d-grid.gap-2
+        button.btn.btn-primary type="submit" Update User
+        a.btn.btn-secondary href="/admin/users" Cancel 

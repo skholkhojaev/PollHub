@@ -1,0 +1,39 @@
+h2.mb-4 All Polls
+
+- if organizer? || admin?
+  .mb-4
+    a.btn.btn-success href="/polls/new" Create New Poll
+
+.row.row-cols-1.row-cols-md-3.g-4
+  - @polls.each do |poll|
+    .col
+      .card.h-100.shadow-sm
+        .card-header class="bg-#{poll.status == 'active' ? 'success' : (poll.status == 'closed' ? 'danger' : 'warning')}"
+          h5.card-title.text-white.mb-0
+            = poll.title
+            - if poll.private
+              span.badge.bg-secondary.ms-2 Private
+          small.text-white Status: #{poll.status.capitalize}
+        .card-body
+          p.card-text = poll.description
+          p.card-text
+            small.text-muted
+              | Created by: #{User.find(poll.organizer_id).username}
+              br
+              | Start: #{poll.start_date.strftime("%d %b %Y")}
+              br
+              | End: #{poll.end_date.strftime("%d %b %Y")}
+        .card-footer.bg-transparent
+          - if poll.status == 'active'
+            a.btn.btn-primary href="/polls/#{poll.id}" Vote Now
+          - elsif poll.status == 'closed'
+            a.btn.btn-secondary href="/polls/#{poll.id}/results" View Results
+          - else
+            - if poll.organizer_id == current_user&.id || admin?
+              a.btn.btn-warning href="/polls/#{poll.id}/edit" Edit Poll
+              form.d-inline action="/polls/#{poll.id}/activate" method="post"
+                button.btn.btn-success.ms-2 type="submit" Activate
+
+- if @polls.empty?
+  .alert.alert-info.mt-4
+    p No polls available yet. 

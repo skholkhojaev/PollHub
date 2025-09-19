@@ -1,0 +1,29 @@
+.row.justify-content-center.mt-5
+  .col-md-6
+    .card.shadow
+      .card-header.bg-primary.text-white
+        h4.mb-0 Register
+      .card-body
+        form action="/register" method="post"
+          .mb-3
+            label.form-label for="username" Username
+            input.form-control type="text" id="username" name="username" required=true
+          
+          .mb-3
+            label.form-label for="email" Email
+            input.form-control type="email" id="email" name="email" required=true
+          
+          .mb-3
+            label.form-label for="password" Password
+            input.form-control type="password" id="password" name="password" required=true
+          
+          .mb-3
+            label.form-label for="password_confirmation" Confirm Password
+            input.form-control type="password" id="password_confirmation" name="password_confirmation" required=true
+          
+          .d-grid
+            button.btn.btn-primary type="submit" Register
+        
+        p.mt-3.text-center
+          | Already have an account? 
+          a href="/login" Login now 

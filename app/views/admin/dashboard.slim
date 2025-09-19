@@ -1,0 +1,51 @@
+h2.mb-4 Admin Dashboard
+
+.row.mb-4
+  .col-md-4
+    .card.bg-primary.text-white
+      .card-body
+        h3.card-title = @user_count
+        p.card-text Users
+  
+  .col-md-4
+    .card.bg-success.text-white
+      .card-body
+        h3.card-title = @poll_count
+        p.card-text Polls
+  
+  .col-md-4
+    .card.bg-info.text-white
+      .card-body
+        h3.card-title = @vote_count
+        p.card-text Votes
+
+.row.mt-4
+  .col-md-12
+    .card.shadow-sm
+      .card-header
+        h5.mb-0 Recent Activities
+      .card-body
+        table.table.table-hover
+          thead
+            tr
+              th User
+              th Activity
+              th Details
+              th Time
+          tbody
+            - @recent_activities.each do |activity|
+              tr
+                td = activity.user ? activity.user.username : "System"
+                td = activity.activity_type.gsub('_', ' ').capitalize
+                td = activity.details
+                td = activity.created_at.strftime("%d %b %Y, %H:%M")
+        
+        a.btn.btn-primary href="/admin/activities" View All Activities
+
+.row.mt-4
+  .col-md-12
+    .card.shadow-sm
+      .card-header
+        h5.mb-0 User Management
+      .card-body
+        a.btn.btn-primary href="/admin/users" Manage Users 
