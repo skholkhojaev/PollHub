@@ -1,5 +1,7 @@
 get '/admin' do
+  # Policy-based authorization as required by task
   require_admin
+  
   log_user_action(Loggers.admin, 'admin_dashboard_accessed')
   @user_count = User.count
   @poll_count = Poll.count
@@ -9,28 +11,33 @@ get '/admin' do
 end
 
 get '/admin/users' do
+  # Policy-based authorization for user management
   require_admin
+  
   log_user_action(Loggers.admin, 'admin_users_list_accessed')
-  @users = User.all
+  @users = policy_scope(User)
   slim :'admin/users'
 end
 
 get '/admin/users/:id/edit' do
-  require_admin
   @user = User.find(params[:id])
+  # Policy-based authorization for editing user details
+  authorize(@user)
+  
   log_user_action(Loggers.admin, 'admin_user_edit_accessed', { target_user_id: params[:id], target_username: @user.username })
   slim :'admin/edit_user'
 end
 
 patch '/admin/users/:id' do
-  require_admin
   @user = User.find(params[:id])
+  # Policy-based authorization for updating users
+  authorize(@user)
   
   # Don't update password if blank
   update_params = {
     username: params[:username],
     email: params[:email],
-    role: params[:role]
+    role_integer: params[:role_integer]
   }
   
   # Only update password if provided
@@ -59,10 +66,11 @@ patch '/admin/users/:id' do
 end
 
 delete '/admin/users/:id' do
-  require_admin
   @user = User.find(params[:id])
+  # Policy-based authorization for deleting users (prevents self-deletion automatically)
+  authorize(@user)
   
-  # Prevent admin from deleting themselves
+  # Additional check for self-deletion (policy should handle this, but double-check)
   if @user.id == current_user.id
     log_security_event(Loggers.security, 'admin_self_deletion_attempt', { 
       admin_user: current_user.username,
@@ -86,6 +94,6 @@ end
 get '/admin/activities' do
   require_admin
   log_user_action(Loggers.admin, 'admin_activities_accessed')
-  @activities = Activity.latest.paginate(page: params[:page], per_page: 20)
+  @activities = Activity.latest.limit(50)
   slim :'admin/activities'
 end 

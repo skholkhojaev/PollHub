@@ -1,0 +1,95 @@
+.row.justify-content-center.mt-4
+  .col-md-8
+    .card.shadow
+      .card-header.bg-primary.text-white.d-flex.justify-content-between.align-items-center
+        h4.mb-0
+          i.fas.fa-user.me-2
+          | My Profile
+        a.btn.btn-outline-light.btn-sm href="/profile/edit"
+          i.fas.fa-edit.me-1
+          | Edit Profile
+      
+      .card-body
+        .row
+          .col-md-6
+            h5.text-primary
+              i.fas.fa-info-circle.me-2
+              | Personal Information
+            
+            .mb-3
+              label.form-label.fw-bold Username:
+              p.form-control-plaintext = @user.username
+            
+            .mb-3
+              label.form-label.fw-bold Email Address:
+              p.form-control-plaintext = @user.email
+              - if @user.new_email.present?
+                .alert.alert-info.mt-2
+                  i.fas.fa-clock.me-2
+                  | Pending email change to: 
+                  strong = @user.new_email
+                  br
+                  small Please check your email and click the confirmation link.
+            
+            .mb-3
+              label.form-label.fw-bold Role:
+              span.badge.bg-secondary.ms-2
+                - case @user.role
+                - when 'admin'
+                  i.fas.fa-crown.me-1
+                  | Administrator
+                - when 'organizer'
+                  i.fas.fa-users-cog.me-1
+                  | Organizer
+                - when 'voter'
+                  i.fas.fa-vote-yea.me-1
+                  | Voter
+            
+            .mb-3
+              label.form-label.fw-bold Member Since:
+              p.form-control-plaintext = @user.created_at.strftime("%B %d, %Y")
+          
+          .col-md-6
+            h5.text-primary
+              i.fas.fa-chart-bar.me-2
+              | Activity Summary
+            
+            .mb-3
+              label.form-label.fw-bold Total Polls Created:
+              - if organizer? || admin?
+                p.form-control-plaintext = @user.polls.count
+              - else
+                p.form-control-plaintext N/A (Voter role)
+            
+            .mb-3
+              label.form-label.fw-bold Total Votes Cast:
+              p.form-control-plaintext = @user.votes.count
+            
+            .mb-3
+              label.form-label.fw-bold Total Comments:
+              p.form-control-plaintext = @user.comments.count
+            
+            - if voter?
+              .mb-3
+                label.form-label.fw-bold Pending Invitations:
+                p.form-control-plaintext = @user.pending_invitations.count
+        
+        .row.mt-4
+          .col-12
+            h5.text-primary
+              i.fas.fa-shield-alt.me-2
+              | Account Security
+            
+            .alert.alert-info
+              i.fas.fa-info-circle.me-2
+              | Your password was last updated on 
+              = @user.updated_at.strftime("%B %d, %Y at %I:%M %p")
+            
+            .d-grid.gap-2.d-md-flex
+              a.btn.btn-warning href="/profile/edit"
+                i.fas.fa-key.me-1
+                | Change Password
+              
+              a.btn.btn-info href="/profile/edit"
+                i.fas.fa-envelope.me-1
+                | Update Email

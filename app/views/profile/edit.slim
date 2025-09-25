@@ -1,0 +1,134 @@
+.row.justify-content-center.mt-4
+  .col-md-10
+    .card.shadow
+      .card-header.bg-primary.text-white.d-flex.justify-content-between.align-items-center
+        h4.mb-0
+          i.fas.fa-edit.me-2
+          | Edit Profile
+        a.btn.btn-outline-light.btn-sm href="/profile"
+          i.fas.fa-arrow-left.me-1
+          | Back to Profile
+      
+      .card-body
+        .row
+          / Profile Information Update
+          .col-md-4
+            .card.h-100
+              .card-header.bg-light
+                h5.mb-0.text-primary
+                  i.fas.fa-user.me-2
+                  | Profile Information
+              .card-body
+                form action="/profile" method="post"
+                  input type="hidden" name="_method" value="patch"
+                  input type="hidden" name="update_type" value="profile"
+                  
+                  .mb-3
+                    label.form-label for="username" Username
+                    input.form-control type="text" id="username" name="username" value="#{@user.username}" required=true
+                    .form-text Your public display name
+                  
+                  .mb-3
+                    label.form-label Current Email
+                    input.form-control type="email" value="#{@user.email}" disabled=true
+                    .form-text This is your current email address
+                  
+                  .mb-3
+                    label.form-label Role
+                    input.form-control type="text" value="#{@user.role.capitalize}" disabled=true
+                    .form-text Your role cannot be changed
+                  
+                  .d-grid
+                    button.btn.btn-primary type="submit"
+                      i.fas.fa-save.me-1
+                      | Update Profile
+          
+          / Password Change
+          .col-md-4
+            .card.h-100
+              .card-header.bg-light
+                h5.mb-0.text-warning
+                  i.fas.fa-key.me-2
+                  | Change Password
+              .card-body
+                form action="/profile" method="post"
+                  input type="hidden" name="_method" value="patch"
+                  input type="hidden" name="update_type" value="password"
+                  
+                  .mb-3
+                    label.form-label for="current_password" Current Password
+                    input.form-control type="password" id="current_password" name="current_password" required=true
+                    .form-text Enter your current password to verify
+                  
+                  .mb-3
+                    label.form-label for="new_password" New Password
+                    input.form-control type="password" id="new_password" name="new_password" required=true
+                    .form-text Minimum 12 characters, must include uppercase, lowercase, number, and special character
+                  
+                  .mb-3
+                    label.form-label for="new_password_confirmation" Confirm New Password
+                    input.form-control type="password" id="new_password_confirmation" name="new_password_confirmation" required=true
+                    .form-text Re-enter your new password
+                  
+                  .d-grid
+                    button.btn.btn-warning type="submit"
+                      i.fas.fa-lock.me-1
+                      | Change Password
+          
+          / Email Change
+          .col-md-4
+            .card.h-100
+              .card-header.bg-light
+                h5.mb-0.text-info
+                  i.fas.fa-envelope.me-2
+                  | Change Email Address
+              .card-body
+                - if @user.new_email.present?
+                  .alert.alert-warning
+                    i.fas.fa-exclamation-triangle.me-2
+                    strong Pending Email Change
+                    br
+                    | You have a pending email change to: 
+                    strong = @user.new_email
+                    br
+                    small Please check your email and click the confirmation link.
+                - else
+                  form action="/profile" method="post"
+                    input type="hidden" name="_method" value="patch"
+                    input type="hidden" name="update_type" value="email"
+                    
+                    .mb-3
+                      label.form-label Current Email
+                      input.form-control type="email" value="#{@user.email}" disabled=true
+                      .form-text Your current email address
+                    
+                    .mb-3
+                      label.form-label for="new_email" New Email Address
+                      input.form-control type="email" id="new_email" name="new_email" required=true
+                      .form-text A confirmation link will be sent to this address
+                    
+                    .alert.alert-info
+                      i.fas.fa-info-circle.me-2
+                      strong Important:
+                      br
+                      | You will receive a confirmation email at the new address. Your email will only be changed after you click the confirmation link.
+                    
+                    .d-grid
+                      button.btn.btn-info type="submit"
+                        i.fas.fa-paper-plane.me-1
+                        | Send Confirmation Email
+        
+        / Security Notice
+        .row.mt-4
+          .col-12
+            .alert.alert-light.border
+              .row
+                .col-md-8
+                  h6.text-primary
+                    i.fas.fa-shield-alt.me-2
+                    | Security Information
+                  p.mb-0 Your account is protected by secure password hashing and session management. Only you can access and modify your profile information.
+                .col-md-4.text-end
+                  small.text-muted
+                    i.fas.fa-clock.me-1
+                    | Last updated: #{@user.updated_at.strftime("%B %d, %Y at %I:%M %p")}

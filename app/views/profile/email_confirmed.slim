@@ -1,0 +1,46 @@
+.row.justify-content-center.mt-5
+  .col-md-6
+    .card.shadow
+      - if @success
+        .card-header.bg-success.text-white
+          h4.mb-0
+            i.fas.fa-check-circle.me-2
+            | Email Confirmed
+      - else
+        .card-header.bg-danger.text-white
+          h4.mb-0
+            i.fas.fa-exclamation-triangle.me-2
+            | Confirmation Failed
+      
+      .card-body.text-center
+        - if @success
+          .mb-4
+            i.fas.fa-envelope-circle-check.fa-4x.text-success
+          
+          h5.text-success = @success
+          
+          p.text-muted Your email address has been successfully updated. You can now use your new email address to log in and receive notifications.
+          
+          .d-grid.gap-2.d-md-flex.justify-content-md-center
+            a.btn.btn-primary href="/profile"
+              i.fas.fa-user.me-1
+              | View Profile
+            a.btn.btn-secondary href="/"
+              i.fas.fa-home.me-1
+              | Go to Homepage
+        
+        - else
+          .mb-4
+            i.fas.fa-times-circle.fa-4x.text-danger
+          
+          h5.text-danger = @error
+          
+          p.text-muted The confirmation link may have expired or is invalid. Please try requesting a new email change from your profile page.
+          
+          .d-grid.gap-2.d-md-flex.justify-content-md-center
+            a.btn.btn-primary href="/profile/edit"
+              i.fas.fa-envelope.me-1
+              | Request New Email Change
+            a.btn.btn-secondary href="/profile"
+              i.fas.fa-user.me-1
+              | Back to Profile

@@ -14,11 +14,11 @@ h2.mb-4 Edit User: #{@user.username}
         input.form-control type="email" id="email" name="email" value="#{@user.email}" required=true
       
       .mb-3
-        label.form-label for="role" Role
-        select.form-select id="role" name="role"
-          option value="admin" selected=(@user.role == 'admin') Admin
-          option value="organizer" selected=(@user.role == 'organizer') Organizer
-          option value="voter" selected=(@user.role == 'voter') Voter
+        label.form-label for="role_integer" Role
+        select.form-select id="role_integer" name="role_integer"
+          option value="2" selected=(@user.admin?) Admin
+          option value="1" selected=(@user.organizer?) Organizer
+          option value="0" selected=(@user.voter?) Voter
       
       .mb-3
         label.form-label for="password" Password (leave blank to keep current)

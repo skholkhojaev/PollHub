@@ -1,0 +1,33 @@
+h2.mb-4 System Activities
+
+.card.shadow-sm
+  .card-body
+    - if @activities.any?
+      table.table.table-hover
+        thead
+          tr
+            th ID
+            th User
+            th Activity Type
+            th Details
+            th Timestamp
+        tbody
+          - @activities.each do |activity|
+            tr
+              td = activity.id
+              td
+                - if activity.user
+                  = activity.user.username
+                - else
+                  em System
+              td
+                span.badge class="bg-#{activity.activity_type.include?('created') ? 'success' : (activity.activity_type.include?('updated') ? 'warning' : (activity.activity_type.include?('deleted') ? 'danger' : 'info'))}"
+                  = activity.activity_type.humanize
+              td = activity.details
+              td = activity.created_at.strftime("%d %b %Y %H:%M")
+    - else
+      .text-center.py-4
+        p.text-muted No activities found.
+
+.mt-4
+  a.btn.btn-primary href="/admin" Back to Dashboard

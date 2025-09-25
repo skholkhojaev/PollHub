@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_09_12_000008) do
+ActiveRecord::Schema.define(version: 2024_09_12_000010) do
 
   create_table "activities", force: :cascade do |t|
     t.integer "user_id"
@@ -86,7 +86,13 @@ ActiveRecord::Schema.define(version: 2024_09_12_000008) do
     t.string "role", default: "voter", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "new_email"
+    t.string "email_confirmation_token"
+    t.datetime "email_confirmation_sent_at"
+    t.integer "role_integer", default: 0, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["email_confirmation_token"], name: "index_users_on_email_confirmation_token", unique: true
+    t.index ["role_integer"], name: "index_users_on_role_integer"
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 

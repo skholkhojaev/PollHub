@@ -14,6 +14,9 @@ gem 'sinatra-activerecord', '~> 2.0.26'
 # Authentication
 gem 'bcrypt', '~> 3.1.18'
 
+# Authorization  
+gem 'pundit', '~> 2.3.0'
+
 # Views
 gem 'slim', '~> 4.1.0'
 

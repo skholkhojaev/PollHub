@@ -52,9 +52,9 @@ html
           ul.navbar-nav
             - if logged_in?
               li.nav-item
-                span.nav-link.text-light
-                  i.fas.fa-user.me-1
-                  = "Welcome, #{current_user.username}"
+                a.nav-link href="/profile"
+                  i.fas.fa-user-circle.me-1
+                  = current_user.username
               li.nav-item
                 a.nav-link href="/logout"
                   i.fas.fa-sign-out-alt.me-1

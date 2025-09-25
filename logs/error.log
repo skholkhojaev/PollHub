@@ -95,3 +95,193 @@
 [2025-09-19 13:29:51] INFO  CommunityPollHub::App: User Action: visit_homepage | User: admin (1) | IP: ::1 | Details: {}
 [2025-09-19 14:23:19] INFO  CommunityPollHub::App: Application starting up - Environment: development
 [2025-09-19 14:23:30] INFO  CommunityPollHub::App: User Action: visit_homepage | Anonymous | IP: ::1 | Details: {}
+[2025-09-19 15:29:01] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-19 15:32:07] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-19 15:32:13] INFO  CommunityPollHub::App: User Action: visit_homepage | Anonymous | IP: ::1 | Details: {}
+[2025-09-19 15:32:15] INFO  CommunityPollHub::Auth: User Action: visit_register_page | Anonymous | IP: ::1 | Details: {}
+[2025-09-19 15:32:54] INFO  CommunityPollHub::Auth: User Action: registration_failed | Anonymous | IP: ::1 | Details: {:username=>"someone", :email=>"dakmoon162@gmail.com", :errors=>["Password is too short (minimum is 12 characters)"]}
+[2025-09-19 15:33:20] INFO  CommunityPollHub::Auth: User Action: registration_successful | User: someone2 (5) | IP: ::1 | Details: {:username=>"someone2", :email=>"dakmoon162@gmail.com"}
+[2025-09-19 15:33:20] INFO  CommunityPollHub::App: User Action: visit_homepage | User: someone2 (5) | IP: ::1 | Details: {}
+[2025-09-19 15:33:23] INFO  CommunityPollHub::App: User Action: profile_viewed | User: someone2 (5) | IP: ::1 | Details: {:user=>"someone2"}
+[2025-09-19 15:33:33] INFO  CommunityPollHub::App: User Action: profile_edit_viewed | User: someone2 (5) | IP: ::1 | Details: {:user=>"someone2"}
+[2025-09-19 15:35:35] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-19 15:35:38] INFO  CommunityPollHub::App: User Action: page_not_found | Anonymous | IP: ::1 | Details: {:path=>"/.well-known/appspecific/com.chrome.devtools.json", :method=>"GET"}
+[2025-09-19 15:35:41] WARN  CommunityPollHub::Security: Security Event: unauthorized_access_attempt | Anonymous | IP: ::1 | Details: {:path=>"/profile", :method=>"PATCH"}
+[2025-09-19 15:35:41] INFO  CommunityPollHub::Auth: User Action: visit_login_page | Anonymous | IP: ::1 | Details: {}
+[2025-09-19 15:35:41] INFO  CommunityPollHub::App: User Action: page_not_found | Anonymous | IP: ::1 | Details: {:path=>"/.well-known/appspecific/com.chrome.devtools.json", :method=>"GET"}
+[2025-09-19 15:35:54] WARN  CommunityPollHub::Security: Security Event: login_failed | Anonymous | IP: ::1 | Details: {:username=>"someone2", :ip=>"::1"}
+[2025-09-19 15:35:59] INFO  CommunityPollHub::Auth: User Action: login_successful | User: someone2 (5) | IP: ::1 | Details: {:username=>"someone2"}
+[2025-09-19 15:35:59] INFO  CommunityPollHub::App: User Action: visit_homepage | User: someone2 (5) | IP: ::1 | Details: {}
+[2025-09-19 15:36:12] INFO  CommunityPollHub::App: User Action: profile_viewed | User: someone2 (5) | IP: ::1 | Details: {:user=>"someone2"}
+[2025-09-19 15:36:14] INFO  CommunityPollHub::App: User Action: profile_edit_viewed | User: someone2 (5) | IP: ::1 | Details: {:user=>"someone2"}
+[2025-09-19 15:41:22] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-19 15:41:33] WARN  CommunityPollHub::Security: Security Event: unauthorized_access_attempt | Anonymous | IP: ::1 | Details: {:path=>"/profile", :method=>"GET"}
+[2025-09-19 15:41:33] INFO  CommunityPollHub::Auth: User Action: visit_login_page | Anonymous | IP: ::1 | Details: {}
+[2025-09-19 15:41:44] INFO  CommunityPollHub::Auth: User Action: login_successful | User: someone2 (5) | IP: ::1 | Details: {:username=>"someone2"}
+[2025-09-19 15:41:44] INFO  CommunityPollHub::App: User Action: visit_homepage | User: someone2 (5) | IP: ::1 | Details: {}
+[2025-09-19 15:41:46] INFO  CommunityPollHub::App: User Action: profile_viewed | User: someone2 (5) | IP: ::1 | Details: {:user=>"someone2"}
+[2025-09-19 15:41:48] INFO  CommunityPollHub::App: User Action: profile_edit_viewed | User: someone2 (5) | IP: ::1 | Details: {:user=>"someone2"}
+[2025-09-19 15:42:30] INFO  CommunityPollHub::App: User Action: visit_homepage | User: someone2 (5) | IP: ::1 | Details: {}
+[2025-09-19 15:43:58] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-19 15:44:02] INFO  CommunityPollHub::App: User Action: visit_homepage | Anonymous | IP: ::1 | Details: {}
+[2025-09-19 15:49:17] INFO  CommunityPollHub::Auth: User Action: visit_login_page | Anonymous | IP: ::1 | Details: {}
+[2025-09-19 15:49:24] INFO  CommunityPollHub::Auth: User Action: login_successful | User: someone2 (5) | IP: ::1 | Details: {:username=>"someone2"}
+[2025-09-19 15:49:24] INFO  CommunityPollHub::App: User Action: visit_homepage | User: someone2 (5) | IP: ::1 | Details: {}
+[2025-09-19 15:49:27] INFO  CommunityPollHub::App: User Action: profile_viewed | User: someone2 (5) | IP: ::1 | Details: {:user=>"someone2"}
+[2025-09-19 15:49:32] INFO  CommunityPollHub::App: User Action: profile_edit_viewed | User: someone2 (5) | IP: ::1 | Details: {:user=>"someone2"}
+[2025-09-19 15:52:06] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-19 15:52:57] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-19 15:52:57] WARN  CommunityPollHub::Security: Security Event: unauthorized_access_attempt | Anonymous | IP: ::1 | Details: {:path=>"/profile", :method=>"PATCH"}
+[2025-09-19 15:52:57] INFO  CommunityPollHub::Auth: User Action: visit_login_page | Anonymous | IP: ::1 | Details: {}
+[2025-09-19 15:53:34] INFO  CommunityPollHub::Auth: User Action: login_successful | User: someone2 (5) | IP: ::1 | Details: {:username=>"someone2"}
+[2025-09-19 15:53:34] INFO  CommunityPollHub::App: User Action: visit_homepage | User: someone2 (5) | IP: ::1 | Details: {}
+[2025-09-19 15:53:37] INFO  CommunityPollHub::App: User Action: profile_viewed | User: someone2 (5) | IP: ::1 | Details: {:user=>"someone2"}
+[2025-09-19 15:53:41] INFO  CommunityPollHub::App: User Action: profile_edit_viewed | User: someone2 (5) | IP: ::1 | Details: {:user=>"someone2"}
+[2025-09-19 15:53:46] INFO  CommunityPollHub::Auth: User Action: email_change_requested | User: someone2 (5) | IP: ::1 | Details: {:user=>"someone2", :new_email=>"sino.kholkhojaev@gmail.com"}
+[2025-09-25 08:20:44] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-25 08:21:21] INFO  CommunityPollHub::App: User Action: visit_homepage | Anonymous | IP: ::1 | Details: {}
+[2025-09-25 08:21:23] INFO  CommunityPollHub::App: User Action: page_not_found | Anonymous | IP: ::1 | Details: {:path=>"/favicon.ico", :method=>"GET"}
+[2025-09-25 08:21:26] INFO  CommunityPollHub::Auth: User Action: visit_login_page | Anonymous | IP: ::1 | Details: {}
+[2025-09-25 08:21:40] INFO  CommunityPollHub::App: User Action: visit_homepage | Anonymous | IP: ::1 | Details: {}
+[2025-09-25 08:21:41] INFO  CommunityPollHub::Auth: User Action: visit_register_page | Anonymous | IP: ::1 | Details: {}
+[2025-09-25 08:21:58] INFO  CommunityPollHub::Auth: User Action: registration_failed | Anonymous | IP: ::1 | Details: {:username=>"UserTest", :email=>"UserTest@gmail.com", :errors=>["Password is too short (minimum is 12 characters)"]}
+[2025-09-25 08:22:33] INFO  CommunityPollHub::Auth: User Action: registration_successful | User: UserTest (6) | IP: ::1 | Details: {:username=>"UserTest", :email=>"UserTest@gmail.com"}
+[2025-09-25 08:22:33] INFO  CommunityPollHub::App: User Action: visit_homepage | User: UserTest (6) | IP: ::1 | Details: {}
+[2025-09-25 08:22:35] INFO  CommunityPollHub::Polls: User Action: polls_list_accessed | User: UserTest (6) | IP: ::1 | Details: {}
+[2025-09-25 08:22:36] INFO  CommunityPollHub::App: User Action: profile_viewed | User: UserTest (6) | IP: ::1 | Details: {:user=>"UserTest"}
+[2025-09-25 08:22:44] INFO  CommunityPollHub::App: User Action: profile_edit_viewed | User: UserTest (6) | IP: ::1 | Details: {:user=>"UserTest"}
+[2025-09-25 08:23:11] INFO  CommunityPollHub::Auth: User Action: password_changed | User: UserTest (6) | IP: ::1 | Details: {:user=>"UserTest"}
+[2025-09-25 08:23:16] INFO  CommunityPollHub::Auth: User Action: logout | User: UserTest (6) | IP: ::1 | Details: {:username=>"UserTest"}
+[2025-09-25 08:23:16] INFO  CommunityPollHub::App: User Action: visit_homepage | Anonymous | IP: ::1 | Details: {}
+[2025-09-25 08:23:17] INFO  CommunityPollHub::Auth: User Action: visit_login_page | Anonymous | IP: ::1 | Details: {}
+[2025-09-25 08:23:29] INFO  CommunityPollHub::Auth: User Action: login_successful | User: UserTest (6) | IP: ::1 | Details: {:username=>"UserTest"}
+[2025-09-25 08:23:29] INFO  CommunityPollHub::App: User Action: visit_homepage | User: UserTest (6) | IP: ::1 | Details: {}
+[2025-09-25 08:23:38] INFO  CommunityPollHub::App: User Action: profile_viewed | User: UserTest (6) | IP: ::1 | Details: {:user=>"UserTest"}
+[2025-09-25 08:23:40] INFO  CommunityPollHub::App: User Action: profile_edit_viewed | User: UserTest (6) | IP: ::1 | Details: {:user=>"UserTest"}
+[2025-09-25 08:23:54] INFO  CommunityPollHub::Auth: User Action: email_change_requested | User: UserTest (6) | IP: ::1 | Details: {:user=>"UserTest", :new_email=>"UsernoTest@gmail.com"}
+[2025-09-25 08:27:21] INFO  CommunityPollHub::App: User Action: page_not_found | User: UserTest (6) | IP: ::1 | Details: {:path=>"/confirm_email/", :method=>"GET"}
+[2025-09-25 08:27:23] INFO  CommunityPollHub::App: User Action: page_not_found | User: UserTest (6) | IP: ::1 | Details: {:path=>"/confirm_email", :method=>"GET"}
+[2025-09-25 08:28:13] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-25 08:28:45] INFO  CommunityPollHub::App: User Action: visit_homepage | User: UserTest (6) | IP: ::1 | Details: {}
+[2025-09-25 08:28:51] INFO  CommunityPollHub::App: User Action: profile_viewed | User: UserTest (6) | IP: ::1 | Details: {:user=>"UserTest"}
+[2025-09-25 08:28:55] INFO  CommunityPollHub::App: User Action: profile_edit_viewed | User: UserTest (6) | IP: ::1 | Details: {:user=>"UserTest"}
+[2025-09-25 08:30:32] INFO  CommunityPollHub::Auth: User Action: email_confirmed | User: UserTest (6) | IP: ::1 | Details: {:user=>"UserTest", :new_email=>"UsernoTest@gmail.com"}
+[2025-09-25 08:30:44] INFO  CommunityPollHub::App: User Action: profile_viewed | User: UserTest (6) | IP: ::1 | Details: {:user=>"UserTest"}
+[2025-09-25 08:30:47] INFO  CommunityPollHub::App: User Action: profile_edit_viewed | User: UserTest (6) | IP: ::1 | Details: {:user=>"UserTest"}
+[2025-09-25 08:32:05] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-25 08:32:10] WARN  CommunityPollHub::Security: Security Event: unauthorized_access_attempt | Anonymous | IP: ::1 | Details: {:path=>"/profile/edit", :method=>"GET"}
+[2025-09-25 08:32:10] INFO  CommunityPollHub::Auth: User Action: visit_login_page | Anonymous | IP: ::1 | Details: {}
+[2025-09-25 08:32:18] INFO  CommunityPollHub::Auth: User Action: login_successful | User: UserTest (6) | IP: ::1 | Details: {:username=>"UserTest"}
+[2025-09-25 08:32:18] INFO  CommunityPollHub::App: User Action: visit_homepage | User: UserTest (6) | IP: ::1 | Details: {}
+[2025-09-25 08:32:25] INFO  CommunityPollHub::App: User Action: profile_viewed | User: UserTest (6) | IP: ::1 | Details: {:user=>"UserTest"}
+[2025-09-25 08:32:27] INFO  CommunityPollHub::App: User Action: profile_edit_viewed | User: UserTest (6) | IP: ::1 | Details: {:user=>"UserTest"}
+[2025-09-25 08:32:36] INFO  CommunityPollHub::Auth: User Action: email_change_requested | User: UserTest (6) | IP: ::1 | Details: {:user=>"UserTest", :new_email=>"UseryesTest@gmail.com"}
+[2025-09-25 08:32:57] INFO  CommunityPollHub::App: User Action: profile_edit_viewed | User: UserTest (6) | IP: ::1 | Details: {:user=>"UserTest"}
+[2025-09-25 08:35:09] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-25 08:35:26] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-25 08:35:26] WARN  CommunityPollHub::Security: Security Event: unauthorized_access_attempt | Anonymous | IP: ::1 | Details: {:path=>"/profile/edit", :method=>"GET"}
+[2025-09-25 08:35:26] INFO  CommunityPollHub::Auth: User Action: visit_login_page | Anonymous | IP: ::1 | Details: {}
+[2025-09-25 08:35:42] INFO  CommunityPollHub::Auth: User Action: login_successful | User: UserTest (6) | IP: ::1 | Details: {:username=>"UserTest"}
+[2025-09-25 08:35:42] INFO  CommunityPollHub::App: User Action: visit_homepage | User: UserTest (6) | IP: ::1 | Details: {}
+[2025-09-25 08:35:43] INFO  CommunityPollHub::App: User Action: profile_viewed | User: UserTest (6) | IP: ::1 | Details: {:user=>"UserTest"}
+[2025-09-25 08:35:45] INFO  CommunityPollHub::App: User Action: profile_edit_viewed | User: UserTest (6) | IP: ::1 | Details: {:user=>"UserTest"}
+[2025-09-25 08:36:08] INFO  CommunityPollHub::Auth: User Action: logout | User: UserTest (6) | IP: ::1 | Details: {:username=>"UserTest"}
+[2025-09-25 08:36:08] INFO  CommunityPollHub::App: User Action: visit_homepage | Anonymous | IP: ::1 | Details: {}
+[2025-09-25 08:36:10] INFO  CommunityPollHub::Auth: User Action: visit_register_page | Anonymous | IP: ::1 | Details: {}
+[2025-09-25 08:36:39] INFO  CommunityPollHub::Auth: User Action: registration_successful | User: UseryesTest (7) | IP: ::1 | Details: {:username=>"UseryesTest", :email=>"UseryesyesTest@gmail.com"}
+[2025-09-25 08:36:39] INFO  CommunityPollHub::App: User Action: visit_homepage | User: UseryesTest (7) | IP: ::1 | Details: {}
+[2025-09-25 08:36:41] INFO  CommunityPollHub::App: User Action: profile_viewed | User: UseryesTest (7) | IP: ::1 | Details: {:user=>"UseryesTest"}
+[2025-09-25 08:36:44] INFO  CommunityPollHub::App: User Action: profile_edit_viewed | User: UseryesTest (7) | IP: ::1 | Details: {:user=>"UseryesTest"}
+[2025-09-25 08:36:56] INFO  CommunityPollHub::Auth: User Action: email_change_requested | User: UseryesTest (7) | IP: ::1 | Details: {:user=>"UseryesTest", :new_email=>"Useryesyes@gmail.com"}
+[2025-09-25 08:39:35] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-25 08:39:35] INFO  CommunityPollHub::App: User Action: visit_homepage | User: UseryesTest (7) | IP: ::1 | Details: {}
+[2025-09-25 08:39:43] INFO  CommunityPollHub::Auth: User Action: email_confirmed | Anonymous | IP: ::1 | Details: {:user=>"UseryesTest", :new_email=>"Useryesyes@gmail.com"}
+[2025-09-25 08:39:47] WARN  CommunityPollHub::Security: Security Event: unauthorized_access_attempt | Anonymous | IP: ::1 | Details: {:path=>"/profile", :method=>"GET"}
+[2025-09-25 08:39:47] INFO  CommunityPollHub::Auth: User Action: visit_login_page | Anonymous | IP: ::1 | Details: {}
+[2025-09-25 08:40:03] INFO  CommunityPollHub::Auth: User Action: login_successful | User: UseryesTest (7) | IP: ::1 | Details: {:username=>"UseryesTest"}
+[2025-09-25 08:40:03] INFO  CommunityPollHub::App: User Action: visit_homepage | User: UseryesTest (7) | IP: ::1 | Details: {}
+[2025-09-25 08:40:05] INFO  CommunityPollHub::App: User Action: profile_viewed | User: UseryesTest (7) | IP: ::1 | Details: {:user=>"UseryesTest"}
+[2025-09-25 08:40:06] INFO  CommunityPollHub::App: User Action: profile_edit_viewed | User: UseryesTest (7) | IP: ::1 | Details: {:user=>"UseryesTest"}
+[2025-09-25 08:40:17] INFO  CommunityPollHub::App: 🔗 EMAIL CONFIRMATION LINK: http://localhost:4567/confirm_email/ytPOtfvIaXnGrv9vCEERQA
+[2025-09-25 08:40:17] INFO  CommunityPollHub::Auth: User Action: email_change_requested | User: UseryesTest (7) | IP: ::1 | Details: {:user=>"UseryesTest", :new_email=>"UsermaybeTest@gmail.com"}
+[2025-09-25 08:40:37] WARN  CommunityPollHub::Security: Security Event: invalid_email_confirmation_token | User: UseryesTest (7) | IP: ::1 | Details: {:token=>"ytPOtfvIaXnGrv9vCEERQA::1", :ip=>"::1"}
+[2025-09-25 08:40:46] INFO  CommunityPollHub::App: User Action: profile_edit_viewed | User: UseryesTest (7) | IP: ::1 | Details: {:user=>"UseryesTest"}
+[2025-09-25 08:40:55] INFO  CommunityPollHub::App: User Action: profile_viewed | User: UseryesTest (7) | IP: ::1 | Details: {:user=>"UseryesTest"}
+[2025-09-25 08:40:56] INFO  CommunityPollHub::Auth: User Action: logout | User: UseryesTest (7) | IP: ::1 | Details: {:username=>"UseryesTest"}
+[2025-09-25 08:40:56] INFO  CommunityPollHub::App: User Action: visit_homepage | Anonymous | IP: ::1 | Details: {}
+[2025-09-25 08:40:58] INFO  CommunityPollHub::Auth: User Action: visit_register_page | Anonymous | IP: ::1 | Details: {}
+[2025-09-25 08:41:21] INFO  CommunityPollHub::Auth: User Action: registration_failed | Anonymous | IP: ::1 | Details: {:username=>"UsermaybeTest", :email=>"UserokayTest@gmail.com", :errors=>["Password confirmation doesn't match Password"]}
+[2025-09-25 08:41:49] INFO  CommunityPollHub::Auth: User Action: registration_successful | User: UsermaybeTest (8) | IP: ::1 | Details: {:username=>"UsermaybeTest", :email=>"UserokayTest@gmail.com"}
+[2025-09-25 08:41:49] INFO  CommunityPollHub::App: User Action: visit_homepage | User: UsermaybeTest (8) | IP: ::1 | Details: {}
+[2025-09-25 08:41:51] INFO  CommunityPollHub::App: User Action: profile_viewed | User: UsermaybeTest (8) | IP: ::1 | Details: {:user=>"UsermaybeTest"}
+[2025-09-25 08:41:53] INFO  CommunityPollHub::App: User Action: profile_edit_viewed | User: UsermaybeTest (8) | IP: ::1 | Details: {:user=>"UsermaybeTest"}
+[2025-09-25 08:42:01] INFO  CommunityPollHub::App: 🔗 EMAIL CONFIRMATION LINK: http://localhost:4567/confirm_email/yETu56SotYj6HHeMle1-5A
+[2025-09-25 08:42:01] INFO  CommunityPollHub::Auth: User Action: email_change_requested | User: UsermaybeTest (8) | IP: ::1 | Details: {:user=>"UsermaybeTest", :new_email=>"Usersomewhat@gmail.com"}
+[2025-09-25 08:42:09] INFO  CommunityPollHub::App: User Action: profile_edit_viewed | User: UsermaybeTest (8) | IP: ::1 | Details: {:user=>"UsermaybeTest"}
+[2025-09-25 08:43:29] INFO  CommunityPollHub::Auth: User Action: email_confirmed | User: UsermaybeTest (8) | IP: ::1 | Details: {:user=>"UseryesTest", :new_email=>"UsermaybeTest@gmail.com"}
+[2025-09-25 08:43:33] INFO  CommunityPollHub::App: User Action: profile_viewed | User: UsermaybeTest (8) | IP: ::1 | Details: {:user=>"UsermaybeTest"}
+[2025-09-25 08:43:46] INFO  CommunityPollHub::App: User Action: profile_edit_viewed | User: UsermaybeTest (8) | IP: ::1 | Details: {:user=>"UsermaybeTest"}
+[2025-09-25 08:43:48] INFO  CommunityPollHub::App: User Action: profile_edit_viewed | User: UsermaybeTest (8) | IP: ::1 | Details: {:user=>"UsermaybeTest"}
+[2025-09-25 08:43:49] INFO  CommunityPollHub::App: User Action: profile_edit_viewed | User: UsermaybeTest (8) | IP: ::1 | Details: {:user=>"UsermaybeTest"}
+[2025-09-25 08:43:59] INFO  CommunityPollHub::Auth: User Action: logout | User: UsermaybeTest (8) | IP: ::1 | Details: {:username=>"UsermaybeTest"}
+[2025-09-25 08:43:59] INFO  CommunityPollHub::App: User Action: visit_homepage | Anonymous | IP: ::1 | Details: {}
+[2025-09-25 08:44:01] INFO  CommunityPollHub::Auth: User Action: visit_login_page | Anonymous | IP: ::1 | Details: {}
+[2025-09-25 08:44:08] WARN  CommunityPollHub::Security: Security Event: login_failed | Anonymous | IP: ::1 | Details: {:username=>"organizer1", :ip=>"::1"}
+[2025-09-25 08:44:19] INFO  CommunityPollHub::Auth: User Action: visit_register_page | Anonymous | IP: ::1 | Details: {}
+[2025-09-25 08:44:46] INFO  CommunityPollHub::Auth: User Action: registration_failed | Anonymous | IP: ::1 | Details: {:username=>"SinoMain", :email=>"SinoMain@gmail.com", :errors=>["Password must contain at least one number"]}
+[2025-09-25 08:45:10] INFO  CommunityPollHub::Auth: User Action: registration_successful | User: SinoMain (9) | IP: ::1 | Details: {:username=>"SinoMain", :email=>"SinoMain@gmail.com"}
+[2025-09-25 08:45:10] INFO  CommunityPollHub::App: User Action: visit_homepage | User: SinoMain (9) | IP: ::1 | Details: {}
+[2025-09-25 08:45:20] INFO  CommunityPollHub::App: User Action: profile_viewed | User: SinoMain (9) | IP: ::1 | Details: {:user=>"SinoMain"}
+[2025-09-25 08:45:22] INFO  CommunityPollHub::App: User Action: profile_edit_viewed | User: SinoMain (9) | IP: ::1 | Details: {:user=>"SinoMain"}
+[2025-09-25 08:45:28] INFO  CommunityPollHub::App: 🔗 EMAIL CONFIRMATION LINK: http://localhost:4567/confirm_email/E9_cwXn7-D-wAqnFKmGdmA
+[2025-09-25 08:45:28] INFO  CommunityPollHub::Auth: User Action: email_change_requested | User: SinoMain (9) | IP: ::1 | Details: {:user=>"SinoMain", :new_email=>"SinoMaybe@gmail.com"}
+[2025-09-25 08:45:35] INFO  CommunityPollHub::App: User Action: profile_edit_viewed | User: SinoMain (9) | IP: ::1 | Details: {:user=>"SinoMain"}
+[2025-09-25 08:45:45] INFO  CommunityPollHub::Auth: User Action: email_confirmed | User: SinoMain (9) | IP: ::1 | Details: {:user=>"SinoMain", :new_email=>"SinoMaybe@gmail.com"}
+[2025-09-25 08:45:48] INFO  CommunityPollHub::App: User Action: profile_viewed | User: SinoMain (9) | IP: ::1 | Details: {:user=>"SinoMain"}
+[2025-09-25 08:45:50] INFO  CommunityPollHub::App: User Action: profile_viewed | User: SinoMain (9) | IP: ::1 | Details: {:user=>"SinoMain"}
+[2025-09-25 08:45:51] INFO  CommunityPollHub::App: User Action: profile_edit_viewed | User: SinoMain (9) | IP: ::1 | Details: {:user=>"SinoMain"}
+[2025-09-25 08:46:06] INFO  CommunityPollHub::App: 🔗 EMAIL CONFIRMATION LINK: http://localhost:4567/confirm_email/nMg61GnmXPoIIwn7_As66A
+[2025-09-25 08:46:06] INFO  CommunityPollHub::Auth: User Action: email_change_requested | User: SinoMain (9) | IP: ::1 | Details: {:user=>"SinoMain", :new_email=>"SinoSure@gmail.com"}
+[2025-09-25 08:46:21] INFO  CommunityPollHub::Auth: User Action: logout | User: SinoMain (9) | IP: ::1 | Details: {:username=>"SinoMain"}
+[2025-09-25 08:46:21] INFO  CommunityPollHub::App: User Action: visit_homepage | Anonymous | IP: ::1 | Details: {}
+[2025-09-25 08:46:23] INFO  CommunityPollHub::Auth: User Action: visit_login_page | Anonymous | IP: ::1 | Details: {}
+[2025-09-25 08:46:50] INFO  CommunityPollHub::Auth: User Action: email_confirmed | Anonymous | IP: ::1 | Details: {:user=>"SinoMain", :new_email=>"SinoSure@gmail.com"}
+[2025-09-25 08:46:54] WARN  CommunityPollHub::Security: Security Event: unauthorized_access_attempt | Anonymous | IP: ::1 | Details: {:path=>"/profile", :method=>"GET"}
+[2025-09-25 08:46:54] INFO  CommunityPollHub::Auth: User Action: visit_login_page | Anonymous | IP: ::1 | Details: {}
+[2025-09-25 09:16:34] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-25 09:17:18] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-25 09:45:03] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-25 09:45:28] INFO  CommunityPollHub::App: User Action: visit_homepage | Anonymous | IP: ::1 | Details: {}
+[2025-09-25 09:47:32] INFO  CommunityPollHub::Auth: User Action: visit_login_page | Anonymous | IP: ::1 | Details: {}
+[2025-09-25 09:47:37] WARN  CommunityPollHub::Security: Security Event: login_failed | Anonymous | IP: ::1 | Details: {:username=>"admin", :ip=>"::1"}
+[2025-09-25 09:49:20] INFO  CommunityPollHub::Auth: User Action: login_successful | User: admin (1) | IP: ::1 | Details: {:username=>"admin"}
+[2025-09-25 09:49:20] INFO  CommunityPollHub::App: User Action: visit_homepage | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-25 09:51:10] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-25 09:51:10] INFO  CommunityPollHub::Admin: User Action: admin_dashboard_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-25 09:51:13] WARN  CommunityPollHub::Security: Security Event: organizer_access_denied | Anonymous | IP: ::1 | Details: {:user=>nil, :path=>"/polls/new", :method=>"GET"}
+[2025-09-25 09:51:13] INFO  CommunityPollHub::App: User Action: visit_homepage | Anonymous | IP: ::1 | Details: {}
+[2025-09-25 09:51:15] INFO  CommunityPollHub::Auth: User Action: visit_login_page | Anonymous | IP: ::1 | Details: {}
+[2025-09-25 09:51:20] INFO  CommunityPollHub::Auth: User Action: login_successful | User: admin (1) | IP: ::1 | Details: {:username=>"admin"}
+[2025-09-25 09:51:20] INFO  CommunityPollHub::App: User Action: visit_homepage | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-25 09:51:25] INFO  CommunityPollHub::Polls: User Action: polls_list_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-25 09:51:25] INFO  CommunityPollHub::Polls: User Action: poll_creation_form_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-25 09:51:27] INFO  CommunityPollHub::App: User Action: visit_homepage | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-25 09:51:28] INFO  CommunityPollHub::Admin: User Action: admin_dashboard_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-25 09:51:31] INFO  CommunityPollHub::Admin: User Action: admin_activities_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-25 09:56:36] INFO  CommunityPollHub::Admin: User Action: admin_activities_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-25 09:56:38] INFO  CommunityPollHub::Admin: User Action: admin_activities_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-25 09:56:42] INFO  CommunityPollHub::Admin: User Action: admin_dashboard_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-25 09:56:45] INFO  CommunityPollHub::Admin: User Action: admin_activities_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-25 09:57:27] INFO  CommunityPollHub::Auth: User Action: visit_login_page | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-25 09:57:31] INFO  CommunityPollHub::Admin: User Action: admin_activities_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-25 10:41:04] INFO  CommunityPollHub::Admin: User Action: admin_activities_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-25 10:41:06] INFO  CommunityPollHub::App: User Action: visit_homepage | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-25 10:41:10] INFO  CommunityPollHub::Polls: User Action: polls_list_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-25 10:41:12] INFO  CommunityPollHub::App: User Action: visit_homepage | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-25 10:41:13] INFO  CommunityPollHub::Polls: User Action: polls_list_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-25 10:41:14] INFO  CommunityPollHub::Polls: User Action: poll_creation_form_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-25 10:41:15] INFO  CommunityPollHub::Admin: User Action: admin_dashboard_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-25 10:41:17] INFO  CommunityPollHub::Admin: User Action: admin_activities_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-25 10:41:19] INFO  CommunityPollHub::Admin: User Action: admin_dashboard_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-25 10:41:20] INFO  CommunityPollHub::Admin: User Action: admin_users_list_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-25 10:41:23] INFO  CommunityPollHub::App: User Action: profile_viewed | User: admin (1) | IP: ::1 | Details: {:user=>"admin"}
