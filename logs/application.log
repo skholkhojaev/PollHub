@@ -509,3 +509,11 @@
 [2025-09-26 13:55:52] INFO  CommunityPollHub::Admin: User Action: admin_activities_accessed | User: admin (1) | IP: ::1 | Details: {}
 [2025-09-26 13:56:00] INFO  CommunityPollHub::Admin: User Action: admin_dashboard_accessed | User: admin (1) | IP: ::1 | Details: {}
 [2025-09-26 13:56:01] INFO  CommunityPollHub::Admin: User Action: admin_users_list_accessed | User: admin (1) | IP: ::1 | Details: {}
+[2025-09-26 14:03:47] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-26 14:03:48] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-26 14:05:35] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-26 14:05:42] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-26 14:06:26] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-26 14:06:31] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-26 14:07:25] INFO  CommunityPollHub::App: Application starting up - Environment: development
+[2025-09-26 14:08:18] INFO  CommunityPollHub::App: User Action: visit_homepage | Anonymous | IP: ::1 | Details: {}

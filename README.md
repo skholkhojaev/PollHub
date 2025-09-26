@@ -74,6 +74,8 @@ The application is built around these core models:
    rake db:migrate
    rake db:seed
    ```
+   
+   **Note**: The database configuration uses `community_poll_hub.sqlite3` as the database file. If you encounter any database-related issues, ensure the `config/database.yml` file points to the correct database file path.
 
 4. Configure environment (optional):
    ```bash
@@ -103,25 +105,27 @@ After seeding the database with `rake db:seed`, you can log in with these pre-co
 ### Admin Account
 - **Username**: `admin`
 - **Email**: `admin@example.com` 
-- **Password**: `Admin123!`
+- **Password**: `AdminPassword123!`
 - **Role**: Admin (full system access, user management, activity monitoring)
 
 ### Organizer Account
 - **Username**: `organizer`
 - **Email**: `organizer@example.com`
-- **Password**: `Organizer123!`
+- **Password**: `OrganizerPass123!`
 - **Role**: Organizer (can create and manage polls)
 
 ### Voter Accounts
 - **Username**: `voter1`
 - **Email**: `voter1@example.com`
-- **Password**: `Voter123!`
+- **Password**: `VoterPassword123!`
 - **Role**: Voter (can participate in polls)
 
 - **Username**: `voter2`
 - **Email**: `voter2@example.com`
-- **Password**: `Voter123!`
+- **Password**: `VoterPassword123!`
 - **Role**: Voter (can participate in polls)
+
+**Security Note**: All passwords meet the minimum security requirements (12+ characters, uppercase, lowercase, numbers, and special characters).
 
 
 ## Logging Configuration
@@ -241,6 +245,12 @@ rspec
 # If you encounter database errors, try:
 rake db:drop db:migrate db:seed
 ```
+
+**Rake commands not working:**
+If `rake db:migrate` or `rake db:seed` fail, common issues include:
+- **Database configuration mismatch**: Ensure `config/database.yml` points to the correct database file
+- **Password validation errors**: All seed passwords must be at least 12 characters and include uppercase, lowercase, numbers, and special characters
+- **Missing dependencies**: Run `bundle install` first to ensure all required gems are installed
 
 **Permission errors with SQLite:**
 ```bash

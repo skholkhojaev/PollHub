@@ -1,17 +1,17 @@
 development:
   adapter: sqlite3
-  database: db/voting_platform_development.sqlite3
+  database: db/community_poll_hub.sqlite3
   pool: 5
   timeout: 5000
 
 test:
   adapter: sqlite3
-  database: db/voting_platform_test.sqlite3
+  database: db/community_poll_hub_test.sqlite3
   pool: 5
   timeout: 5000
 
 production:
   adapter: sqlite3
-  database: db/voting_platform_production.sqlite3
+  database: db/community_poll_hub_production.sqlite3
   pool: 5
   timeout: 5000 

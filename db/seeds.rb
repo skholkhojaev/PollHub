@@ -2,7 +2,7 @@
 admin = User.create!(
   username: 'admin',
   email: 'admin@example.com',
-  password: 'Admin123!',
+  password: 'AdminPassword123!',
   role: 'admin'
 )
 
@@ -10,7 +10,7 @@ admin = User.create!(
 organizer = User.create!(
   username: 'organizer',
   email: 'organizer@example.com',
-  password: 'Organizer123!',
+  password: 'OrganizerPass123!',
   role: 'organizer'
 )
 
@@ -18,14 +18,14 @@ organizer = User.create!(
 voter1 = User.create!(
   username: 'voter1',
   email: 'voter1@example.com',
-  password: 'Voter123!',
+  password: 'VoterPassword123!',
   role: 'voter'
 )
 
 voter2 = User.create!(
   username: 'voter2',
   email: 'voter2@example.com',
-  password: 'Voter123!',
+  password: 'VoterPassword123!',
   role: 'voter'
 )
 
