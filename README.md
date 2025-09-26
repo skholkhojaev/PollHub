@@ -45,52 +45,96 @@ The application is built around these core models:
 - **Framework**: Sinatra (lightweight Ruby web framework)
 - **Database**: SQLite with ActiveRecord ORM
 - **Authentication**: BCrypt for secure password management
+- **Authorization**: Pundit for role-based access control
 - **Frontend**: Slim templating engine with Bootstrap 5
 - **Styling**: Custom CSS for enhanced UI
 - **Logging**: Ruby Logging library for comprehensive monitoring
 
+## Requirements
+
+- Ruby 2.6.10
+- SQLite3
+- Bundler gem
+
 ## Installation
 
 1. Clone the repository:
-   ```
+   ```bash
    git clone <repository-url>
+   cd PollHub
    ```
 
 2. Install dependencies:
-   ```
+   ```bash
    bundle install
    ```
 
 3. Set up the database:
-   ```
-   rake db:create
+   ```bash
    rake db:migrate
    rake db:seed
    ```
 
-4. Configure logging (optional):
+4. Configure environment (optional):
    ```bash
-   # Set log level (default: info)
+   # Set log level (default: info for production, debug for development)
    export LOG_LEVEL=debug
+   
+   # Set custom session secret (optional - auto-generated if not set)
+   export SESSION_SECRET=your_secret_key_here
    ```
 
 5. Start the server:
-   ```
+   ```bash
    ruby app.rb
    ```
-or 
-```
-bundle exec rerun 'rackup config.ru -p 4567'
-```
+   
+   Or for development with auto-reload:
+   ```bash
+   bundle exec rerun 'rackup config.ru -p 4567'
+   ```
+
 6. Visit `http://localhost:4567` in your browser
+
+## Default Test Accounts
+
+After seeding the database with `rake db:seed`, you can log in with these pre-configured test accounts:
+
+### Admin Account
+- **Username**: `admin`
+- **Email**: `admin@example.com` 
+- **Password**: `Admin123!`
+- **Role**: Admin (full system access, user management, activity monitoring)
+
+### Organizer Account
+- **Username**: `organizer`
+- **Email**: `organizer@example.com`
+- **Password**: `Organizer123!`
+- **Role**: Organizer (can create and manage polls)
+
+### Voter Accounts
+- **Username**: `voter1`
+- **Email**: `voter1@example.com`
+- **Password**: `Voter123!`
+- **Role**: Voter (can participate in polls)
+
+- **Username**: `voter2`
+- **Email**: `voter2@example.com`
+- **Password**: `Voter123!`
+- **Role**: Voter (can participate in polls)
+
 
 ## Logging Configuration
 
 ### Environment-Based Log Levels
 
+The application automatically sets log levels based on the environment:
+
 - **Development**: DEBUG level (detailed debugging information)
-- **Production**: INFO level (general application flow)
+- **Production**: INFO level (general application flow)  
 - **Test**: WARN level (warnings and errors only)
+
+You can override the default log level by setting the `LOG_LEVEL` environment variable.
 
 ### Log Files
 
@@ -127,6 +171,10 @@ For detailed logging documentation, see [docs/logging.md](docs/logging.md).
 - **BCrypt**: [https://github.com/bcrypt-ruby/bcrypt-ruby](https://github.com/bcrypt-ruby/bcrypt-ruby)
   - Secure password hashing and authentication
   - Industry-standard encryption for user passwords
+
+- **Pundit**: [https://github.com/varvet/pundit](https://github.com/varvet/pundit)
+  - Object-oriented authorization for Ruby applications
+  - Policy-based access control for different user roles
 
 - **Slim**: [http://slim-lang.com/](http://slim-lang.com/)
   - Lightweight templating engine
@@ -180,8 +228,40 @@ The database design follows best practices:
 ## Testing
 
 Run the test suite with:
-```
+```bash
 rspec
+```
+
+## Troubleshooting
+
+### Common Issues
+
+**Database errors on first run:**
+```bash
+# If you encounter database errors, try:
+rake db:drop db:migrate db:seed
+```
+
+**Permission errors with SQLite:**
+```bash
+# Ensure the db directory is writable:
+chmod 755 db/
+```
+
+**Bundle install issues:**
+```bash
+# If you have Ruby version conflicts:
+rbenv install 2.6.10
+rbenv local 2.6.10
+bundle install
+```
+
+**Port already in use:**
+```bash
+# If port 4567 is busy, specify a different port:
+ruby app.rb -p 3000
+# or
+bundle exec rerun 'rackup config.ru -p 3000'
 ```
 
 ## Monitoring and Maintenance

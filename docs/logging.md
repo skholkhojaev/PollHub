@@ -1,44 +1,44 @@
-# Logging and Monitoring System
+# Logging- und Überwachungssystem
 
-## Overview
+## Überblick
 
-This application implements a comprehensive logging and monitoring system using the Ruby Logging library. The system provides configurable log levels, structured logging, and separate log files for different types of events.
+Diese Anwendung implementiert ein umfassendes Logging- und Überwachungssystem mit der Ruby Logging-Bibliothek. Das System bietet konfigurierbare Log-Level, strukturiertes Logging und separate Log-Dateien für verschiedene Arten von Ereignissen.
 
-## Features
+## Funktionen
 
-### Log Levels
-- **DEBUG**: Detailed information for debugging
-- **INFO**: General information about application flow
-- **WARN**: Warning messages for potentially harmful situations
-- **ERROR**: Error events that might still allow the application to continue
-- **FATAL**: Severe error events that will likely lead to application failure
+### Log-Level
+- **DEBUG**: Detaillierte Informationen für das Debugging
+- **INFO**: Allgemeine Informationen über den Anwendungsablauf
+- **WARN**: Warnmeldungen für potenziell schädliche Situationen
+- **ERROR**: Fehlerereignisse, die die Anwendung möglicherweise weiterhin funktionieren lassen
+- **FATAL**: Schwerwiegende Fehlerereignisse, die wahrscheinlich zum Anwendungsausfall führen
 
-### Log Files
-- `logs/application.log`: All application logs
-- `logs/error.log`: Error-level logs only
+### Log-Dateien
+- `logs/application.log`: Alle Anwendungslogs
+- `logs/error.log`: Nur Logs der Fehlerstufe
 
-### Specialized Loggers
-- `CommunityPollHub::App`: Main application events
-- `CommunityPollHub::Auth`: Authentication and authorization events
-- `CommunityPollHub::Admin`: Administrative actions
-- `CommunityPollHub::Polls`: Poll-related operations
-- `CommunityPollHub::Users`: User management operations
-- `CommunityPollHub::Database`: Database operations
-- `CommunityPollHub::Security`: Security events
+### Spezialisierte Logger
+- `CommunityPollHub::App`: Hauptanwendungsereignisse
+- `CommunityPollHub::Auth`: Authentifizierungs- und Autorisierungsereignisse
+- `CommunityPollHub::Admin`: Administrative Aktionen
+- `CommunityPollHub::Polls`: Umfragebezogene Operationen
+- `CommunityPollHub::Users`: Benutzerverwaltungsoperationen
+- `CommunityPollHub::Database`: Datenbankoperationen
+- `CommunityPollHub::Security`: Sicherheitsereignisse
 
-## Configuration
+## Konfiguration
 
-### Environment-Based Configuration
+### Umgebungsbasierte Konfiguration
 
-The logging level is automatically configured based on the environment:
+Das Logging-Level wird automatisch basierend auf der Umgebung konfiguriert:
 
-- **Development**: DEBUG level
-- **Production**: INFO level
-- **Test**: WARN level
+- **Development**: DEBUG-Level
+- **Production**: INFO-Level
+- **Test**: WARN-Level
 
-### Manual Configuration
+### Manuelle Konfiguration
 
-To change the log level at runtime, set the `LOG_LEVEL` environment variable:
+Um das Log-Level zur Laufzeit zu ändern, setzen Sie die `LOG_LEVEL`-Umgebungsvariable:
 
 ```bash
 export LOG_LEVEL=debug
@@ -48,120 +48,120 @@ export LOG_LEVEL=error
 export LOG_LEVEL=fatal
 ```
 
-## Usage
+## Verwendung
 
-### Basic Logging
+### Basis-Logging
 
 ```ruby
-# Using specialized loggers
-Loggers.app.info("Application event")
-Loggers.auth.info("Authentication event")
-Loggers.admin.info("Admin action")
-Loggers.polls.info("Poll operation")
-Loggers.users.info("User operation")
-Loggers.db.info("Database operation")
-Loggers.security.info("Security event")
+# Verwendung spezialisierter Logger
+Loggers.app.info("Anwendungsereignis")
+Loggers.auth.info("Authentifizierungsereignis")
+Loggers.admin.info("Admin-Aktion")
+Loggers.polls.info("Umfrage-Operation")
+Loggers.users.info("Benutzer-Operation")
+Loggers.db.info("Datenbank-Operation")
+Loggers.security.info("Sicherheitsereignis")
 ```
 
-### User Action Logging
+### Benutzeraktion-Logging
 
 ```ruby
-# Log user actions with context
+# Protokolliere Benutzeraktionen mit Kontext
 log_user_action(Loggers.app, 'action_name', { detail1: 'value1', detail2: 'value2' })
 ```
 
-### Error Logging
+### Fehler-Logging
 
 ```ruby
-# Log errors with context
+# Protokolliere Fehler mit Kontext
 log_error(Loggers.app, error, { path: request.path, method: request.request_method })
 ```
 
-### Security Event Logging
+### Sicherheitsereignis-Logging
 
 ```ruby
-# Log security events
+# Protokolliere Sicherheitsereignisse
 log_security_event(Loggers.security, 'event_type', { user: username, ip: ip_address })
 ```
 
-### Enhanced Logging Utilities
+### Erweiterte Logging-Hilfsmittel
 
 ```ruby
-# Performance logging
+# Performance-Logging
 LoggingUtils.log_performance(Loggers.app, 'operation_name', duration_ms, details)
 
-# Database operation logging
+# Datenbank-Operation-Logging
 LoggingUtils.log_db_operation(Loggers.db, 'SELECT', 'users', 10, details)
 
-# API request logging
+# API-Request-Logging
 LoggingUtils.log_api_request(Loggers.app, 'GET', '/polls', 200, duration_ms, current_user)
 
-# Security event logging with severity
+# Sicherheitsereignis-Logging mit Schweregrad
 LoggingUtils.log_security_event_enhanced(Loggers.security, 'login_failed', :medium, details)
 
-# Audit trail logging
+# Audit-Trail-Logging
 LoggingUtils.log_audit_trail(Loggers.admin, 'user_update', user, current_user, changes)
 ```
 
-## Log Format
+## Log-Format
 
-Each log entry includes:
-- **Timestamp**: When the event occurred
-- **Log Level**: DEBUG, INFO, WARN, ERROR, or FATAL
-- **Logger Name**: Which component generated the log
-- **Message**: Description of the event
-- **Context**: Additional details (user, IP, etc.)
+Jeder Log-Eintrag enthält:
+- **Zeitstempel**: Wann das Ereignis aufgetreten ist
+- **Log-Level**: DEBUG, INFO, WARN, ERROR oder FATAL
+- **Logger-Name**: Welche Komponente das Log generiert hat
+- **Nachricht**: Beschreibung des Ereignisses
+- **Kontext**: Zusätzliche Details (Benutzer, IP, etc.)
 
-Example log entry:
+Beispiel-Log-Eintrag:
 ```
-[2024-01-15 14:30:25] INFO  CommunityPollHub::Auth: User Action: login_successful | User: john_doe (123) | IP: 192.168.1.100 | Details: {:username=>"john_doe"}
+[2024-01-15 14:30:25] INFO  CommunityPollHub::Auth: Benutzeraktion: login_successful | Benutzer: john_doe (123) | IP: 192.168.1.100 | Details: {:username=>"john_doe"}
 ```
 
-## Security Logging
+## Sicherheits-Logging
 
-The system automatically logs:
-- Login attempts (successful and failed)
-- Unauthorized access attempts
-- Admin actions
-- User role changes
-- Poll access violations
-- Self-deletion attempts
+Das System protokolliert automatisch:
+- Anmeldeversuche (erfolgreich und fehlgeschlagen)
+- Unbefugte Zugriffsversuche
+- Admin-Aktionen
+- Benutzerrollenänderungen
+- Umfrage-Zugriffsverletzungen
+- Selbstlöschungsversuche
 
-## Performance Monitoring
+## Performance-Überwachung
 
-The logging system can track:
-- Request processing times
-- Database operation performance
-- User action patterns
-- System resource usage
+Das Logging-System kann verfolgen:
+- Request-Verarbeitungszeiten
+- Datenbank-Operationsleistung
+- Benutzeraktionsmuster
+- Systemressourcenverbrauch
 
-## Monitoring and Alerting
+## Überwachung und Alarmierung
 
-### Log Analysis
+### Log-Analyse
 
-Use standard Unix tools to analyze logs:
+Verwenden Sie Standard-Unix-Tools zur Log-Analyse:
 
 ```bash
-# View recent logs
+# Aktuelle Logs anzeigen
 tail -f logs/application.log
 
-# Search for errors
+# Nach Fehlern suchen
 grep "ERROR" logs/application.log
 
-# Search for security events
+# Nach Sicherheitsereignissen suchen
 grep "Security Event" logs/application.log
 
-# Count log entries by level
+# Log-Einträge nach Level zählen
 grep -c "INFO" logs/application.log
 grep -c "ERROR" logs/application.log
 ```
 
-### Log Rotation
+### Log-Rotation
 
-Consider implementing log rotation to manage log file sizes:
+Implementieren Sie Log-Rotation zur Verwaltung der Log-Dateigrößen:
 
 ```bash
-# Example logrotate configuration
+# Beispiel-logrotate-Konfiguration
 logs/*.log {
     daily
     missingok
@@ -175,34 +175,34 @@ logs/*.log {
 
 ## Best Practices
 
-1. **Use Appropriate Log Levels**: Don't log everything at DEBUG level in production
-2. **Include Context**: Always include relevant context (user, IP, action details)
-3. **Avoid Sensitive Data**: Never log passwords, tokens, or other sensitive information
-4. **Structured Logging**: Use consistent format for similar events
-5. **Performance**: Avoid expensive operations in logging statements
-6. **Monitoring**: Regularly review logs for patterns and issues
+1. **Angemessene Log-Level verwenden**: Protokollieren Sie nicht alles auf DEBUG-Level in der Produktion
+2. **Kontext einschließen**: Immer relevanten Kontext einschließen (Benutzer, IP, Aktionsdetails)
+3. **Sensible Daten vermeiden**: Niemals Passwörter, Token oder andere sensible Informationen protokollieren
+4. **Strukturiertes Logging**: Konsistentes Format für ähnliche Ereignisse verwenden
+5. **Performance**: Teure Operationen in Logging-Anweisungen vermeiden
+6. **Überwachung**: Logs regelmäßig auf Muster und Probleme überprüfen
 
-## Troubleshooting
+## Fehlerbehebung
 
-### Common Issues
+### Häufige Probleme
 
-1. **Logs not appearing**: Check log level configuration
-2. **Permission errors**: Ensure write permissions on logs directory
-3. **Large log files**: Implement log rotation
-4. **Missing context**: Verify helper methods are being called correctly
+1. **Logs erscheinen nicht**: Log-Level-Konfiguration überprüfen
+2. **Berechtigungsfehler**: Schreibberechtigungen für logs-Verzeichnis sicherstellen
+3. **Große Log-Dateien**: Log-Rotation implementieren
+4. **Fehlender Kontext**: Überprüfen, ob Hilfsmethoden korrekt aufgerufen werden
 
-### Debug Mode
+### Debug-Modus
 
-To enable debug logging temporarily:
+Um Debug-Logging temporär zu aktivieren:
 
 ```bash
 export LOG_LEVEL=debug
 ruby app.rb
 ```
 
-## External Libraries Used
+## Verwendete externe Bibliotheken
 
 - **Ruby Logging**: [https://github.com/TwP/logging](https://github.com/TwP/logging)
-  - Comprehensive logging framework for Ruby
-  - Supports multiple appenders and layouts
-  - Configurable log levels and filtering 
+  - Umfassendes Logging-Framework für Ruby
+  - Unterstützt mehrere Appender und Layouts
+  - Konfigurierbare Log-Level und Filterung 
